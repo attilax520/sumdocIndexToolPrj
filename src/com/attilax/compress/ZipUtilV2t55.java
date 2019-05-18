@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.zip.ZipException;
 
 import org.apache.log4j.Logger;
@@ -32,8 +33,8 @@ import com.google.common.collect.Lists;
  * @date 2008-8-25
  */
 
-public class ZipUtil {
-	protected static Logger logger = Logger.getLogger(ZipUtil.class);
+public class ZipUtilV2t55 {
+	protected static Logger logger = Logger.getLogger(ZipUtilV2t55.class);
 
 	/** */
 	/**
@@ -241,6 +242,42 @@ public class ZipUtil {
 				System.out.println(zipEntry.getName());
 				System.out.println("============");
 				li.add(zipEntry.getName());
+
+			}
+			/// end while
+
+		} catch (IOException ex) {
+			ExUtil.throwExV2(ex);
+		}
+		return li;
+	}
+
+	public static List<String> filelist(String zipFilePath, String encode,Consumer<ZipEntry> Consumer1) {
+		List<String> li = Lists.newArrayList();
+		OutputStream os = null;
+		InputStream is = null;
+		ZipFile zipFile = null;
+		try {
+			zipFile = new ZipFile(zipFilePath, encode);
+			// String encode= zipFile.getEncoding(); null
+
+			String directoryPath = "";
+
+			Enumeration Enumeration_item = zipFile.getEntries();
+
+			if (null == Enumeration_item)
+				return li;
+
+			ZipEntry zipEntry = null;
+			while (Enumeration_item.hasMoreElements()) {
+				zipEntry = (ZipEntry) Enumeration_item.nextElement();
+				Consumer1.accept(zipEntry);
+				// FlashFXP_4.3.1.1969_ati/What's new.rtf
+//				System.out.println(zipEntry);
+//				// zipEntry.get
+//				System.out.println(zipEntry.getName());
+//				System.out.println("============");
+//				li.add(zipEntry.getName());
 
 			}
 			/// end while
