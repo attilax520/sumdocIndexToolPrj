@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.zip.ZipException;
 
@@ -24,6 +25,7 @@ import com.attilax.net.ftp.RunnableImp;
 import com.attilax.util.ExUtil;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 /** */
 /**
@@ -252,7 +254,7 @@ public class ZipUtilV2t55 {
 		return li;
 	}
 
-	public static List<String> filelist(String zipFilePath, String encode,Consumer<ZipEntry> Consumer1) {
+	public static List<String> filelist(String zipFilePath, String encode,Consumer<Map> Consumer1) {
 		List<String> li = Lists.newArrayList();
 		OutputStream os = null;
 		InputStream is = null;
@@ -263,7 +265,7 @@ public class ZipUtilV2t55 {
 
 			String directoryPath = "";
 
-			Enumeration Enumeration_item = zipFile.getEntries();
+			Enumeration<ZipEntry> Enumeration_item = zipFile.getEntries();
 
 			if (null == Enumeration_item)
 				return li;
@@ -271,13 +273,11 @@ public class ZipUtilV2t55 {
 			ZipEntry zipEntry = null;
 			while (Enumeration_item.hasMoreElements()) {
 				zipEntry = (ZipEntry) Enumeration_item.nextElement();
-				Consumer1.accept(zipEntry);
-				// FlashFXP_4.3.1.1969_ati/What's new.rtf
-//				System.out.println(zipEntry);
-//				// zipEntry.get
-//				System.out.println(zipEntry.getName());
-//				System.out.println("============");
-//				li.add(zipEntry.getName());
+				Map m=Maps.newLinkedHashMap();
+				m.put("zipEntry", zipEntry);
+				m.put("zipFile",zipFile);
+				Consumer1.accept(m);
+				 
 
 			}
 			/// end while
@@ -471,7 +471,7 @@ public class ZipUtilV2t55 {
 		}
 	}
 
-	private static void upzipSingleOutput(ZipFile zipFile, ZipEntry zipEntry, File targetFile)
+	public static void upzipSingleOutput(ZipFile zipFile, ZipEntry zipEntry, File targetFile)
 			throws FileNotFoundException, IOException, ZipException {
 		OutputStream os;
 		InputStream is;

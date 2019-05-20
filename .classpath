@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="miniPrjjars/guava-17.0.jar"/>
 	<classpathentry kind="lib" path="miniPrjjars/log4j-1.2.9.jar"/>
 	<classpathentry kind="lib" path="miniPrjjars/org.apache.tools.zip_1.9.6.jar"/>
+	<classpathentry kind="lib" path="miniPrjjars/jsoup-1.9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

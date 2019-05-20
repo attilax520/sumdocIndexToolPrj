@@ -33,7 +33,7 @@ public class htmlJsoupUtil {
 		return text;
 	}
 
-	static String html2txt(String t) {
+public	static String html2txt(String t) {
 		// org.apache.commons.io.FileUtils.readFileToString(file, encoding)
 
 		Document Document1 = Jsoup.parse(t);
