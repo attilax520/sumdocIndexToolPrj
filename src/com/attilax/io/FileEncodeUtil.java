@@ -3,6 +3,8 @@ package com.attilax.io;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.attilax.Charset.EncodingDetect;
+
 public class FileEncodeUtil {
 
 	/**
@@ -26,6 +28,16 @@ public class FileEncodeUtil {
          code = "UTF-16";  
         }  
         return code;  
- }  
+ }
+
+	public static String getTxtEncode(InputStream inputStream, long size) {
+		 
+		return EncodingDetect.getJavaEncode(inputStream, size);
+	}
+
+	public static String getTxtEncode(byte[] ba) {
+		// TODO Auto-generated method stub
+		return EncodingDetect.getJavaEncode(ba);
+	}  
 
 }

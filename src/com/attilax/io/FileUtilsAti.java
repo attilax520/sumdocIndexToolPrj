@@ -27,7 +27,7 @@ import com.attilax.util.ExUtil;
       
     	
     	/**
-    	attilax    2016妤犵儑鎷�闁哄牞鎷�8闁哄喛鎷� 濞戞挸顑呭畷锟�:38:58
+    	attilax    2016濡ょ姷鍎戦幏锟介梺鍝勭墳閹凤拷8闂佸搫鍠涢幏锟� 婵炴垶鎸搁鍛暦閿燂拷:38:58
     	 * @param f
     	 * @param targetDir
     	 * @param oriDir
@@ -47,14 +47,14 @@ import com.attilax.util.ExUtil;
     	
     	/**
     	 * s61  dek  contains jude..maybe file not hav ext name
-    	@author attilax 闁奸绀侀幖浼存儍閸曨厼鐒婚悗娑虫嫹
-    		@since  2014-5-8 濞戞挸锕ゅ畷锟�9:37:40$
+    	@author attilax 闂佸ジ顣︾粈渚�骞栨导瀛樺剭闁告洦鍘奸悞濠氭倵濞戣櫕瀚�
+    		@since  2014-5-8 婵炴垶鎸搁敃銈呯暦閿燂拷9:37:40$
     	
     	 * @param f
     	 * @param string
     	 */
     	public static boolean move(String f, String target) {
-    		// attilax 閼颁礁鎼伴惃鍕焻鐎涳拷  娑撳﹤宕�9:37:40   2014-5-8 
+    		// attilax 闁奸绀侀幖浼存儍閸曨厼鐒婚悗娑虫嫹  濞戞挸锕ゅ畷锟�9:37:40   2014-5-8 
 //    		File f=new  File(target);
 //    		if(f.exists())
     		//if(!target.contains("."))
@@ -69,7 +69,7 @@ import com.attilax.util.ExUtil;
     			File oldFile = new File(f);
     			//filex.move(f,target);
 //    			
-//    			// 鐏忓棙鏋冩禒鍓佇╅崚鐗堟煀閺傚洣娆㈤柌锟�
+//    			// 閻忓繐妫欓弸鍐╃閸撲絿鈺呭礆閻楀牊鐓�闁哄倸娲ｅ▎銏ゆ煂閿燂拷
 //    			
      		File fnew = new File(target);
      	return	oldFile.renameTo(fnew);
@@ -87,10 +87,10 @@ import com.attilax.util.ExUtil;
     			if(file.getParentFile().isFile())
     				throw new RuntimeException("exist same name file: should be create dir for file:"+fileFullPath);
     		 if (!file.getParentFile().exists()) {
-    		   //  System.out.println("閻╊喗鐖ｉ弬鍥︽閹碉拷閸︺劏鐭惧鍕瑝鐎涙ê婀敍灞藉櫙婢跺洤鍨卞鎭掞拷鍌橈拷鍌橈拷锟�+fileFullPath);
+    		   //  System.out.println("闁烩晩鍠楅悥锝夊棘閸ワ附顐介柟纰夋嫹闁革负鍔忛惌鎯ь嚗閸曨亞鐟濋悗娑櫭﹢顏堟晬鐏炶棄娅欏璺烘搐閸ㄥ崬顕欓幁鎺炴嫹閸屾﹫鎷烽崒姗堟嫹閿燂拷+fileFullPath);
     		     if (!file.getParentFile().mkdirs()) {
     		    	 throw new RuntimeException("create parent  dir fail:"+fileFullPath);
-    		   //   System.out.println("閸掓稑缂撻惄顔肩秿閺傚洣娆㈤幍锟介崷銊ф畱閻╊喖缍嶆径杈Е閿涳拷"+fileFullPath);
+    		   //   System.out.println("闁告帗绋戠紓鎾绘儎椤旇偐绉块柡鍌氭矗濞嗐垽骞嶉敓浠嬪捶閵娧勭暠闁烩晩鍠栫紞宥嗗緞鏉堫偉袝闁挎冻鎷�"+fileFullPath);
     		   
     		     }
     		 }
@@ -177,7 +177,7 @@ import com.attilax.util.ExUtil;
           
         /**  todox  perform
          * Mapped File  way 
-         * MappedByteBuffer 鍙互鍦ㄥ鐞嗗ぇ鏂囦欢鏃讹紝鎻愬崌鎬ц兘 
+         * MappedByteBuffer 閸欘垯浜掗崷銊ヮ槱閻炲棗銇囬弬鍥︽閺冭绱濋幓鎰磳閹嗗厴 
          * @param filename 
          * @return 
          * @throws IOException 
@@ -210,15 +210,15 @@ import com.attilax.util.ExUtil;
 
         /**
 
-         * 鐢熶骇鏂囦欢 path 濡傛灉鏂囦欢鎵�湪璺緞涓嶅瓨鍦ㄥ垯鐢熸垚璺緞
+         * 閻㈢喍楠囬弬鍥︽ path 婵″倹鐏夐弬鍥︽閹碉拷婀捄顖氱窞娑撳秴鐡ㄩ崷銊ュ灟閻㈢喐鍨氱捄顖氱窞
 
          * 
 
          * @param fileName
 
-         *            鏂囦欢鍚�甯﹁矾寰�
+         *            閺傚洣娆㈤崥锟界敮锕佺熅瀵帮拷
 
-         * @param isDirectory 鏄惁涓鸿矾寰�
+         * @param isDirectory 閺勵垰鎯佹稉楦跨熅瀵帮拷
 
          * @return
 
@@ -252,7 +252,12 @@ import com.attilax.util.ExUtil;
 
         }
 
-
+/**
+ * ok   can process utf no bom file..
+ * 
+ * @param f
+ * @return
+ */
 		public static String readFileToStringAutoDetectEncode(String f) {
 			String code = EncodingDetect.getJavaEncode(f);
 			String t = null;
@@ -311,7 +316,7 @@ import com.attilax.util.ExUtil;
  * @return
  */
 		public static boolean isBinfileType(String f) {
-			if(f.endsWith(".exe") || f.endsWith(".dll") || f.endsWith(".重命名") || f.endsWith(".mp3") || f.endsWith(".mp4")|| f.endsWith(".pdf") || f.endsWith(".chm") || f.endsWith(".wps"))   
+			if(f.endsWith(".exe") || f.endsWith(".dll") || f.endsWith(".閲嶅懡鍚�") || f.endsWith(".mp3") || f.endsWith(".mp4")|| f.endsWith(".pdf") || f.endsWith(".chm") || f.endsWith(".wps"))   
 				return true;
 			 if( isImgType(f))
 				 return true;
@@ -348,4 +353,6 @@ public static boolean isNotDocFmt(String lowerCase) {
 		return true;
 	return false;
 }
+
+ 
     }  

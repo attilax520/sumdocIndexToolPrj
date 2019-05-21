@@ -15,6 +15,8 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.commons.io.FileUtils;
+
 import com.alibaba.fastjson.JSON;
 import com.attilax.coreLuni.util.jsonuti4fc;
 import com.google.common.collect.Lists;
@@ -22,11 +24,15 @@ import com.google.common.collect.Lists;
 public class EmlImport {
 	
 	public static void main(String[] args) throws  Exception {
+		int cnt = 0;
 		//IMAPFolder
+		String dir="D:\\0emlIndexAutoencode9";
+		int pageSize = 30;
 		System.out.println("--");
 		Session session = Session.getDefaultInstance(System.getProperties(),null);
 		Store store = session.getStore("imaps");
-	 	store.connect("imap.qq.com", "1466519819@qq.com", "cfkwqvkmbtvtjfid");
+	 	String string =FileUtils.readFileToString(new File("d:\\0db\\empwd.txt")) ;
+		store.connect("imap.qq.com", "attilax2@qq.com", string);
 
 		// Get default folder
 		Folder folder = store.getDefaultFolder();
@@ -37,13 +43,15 @@ public class EmlImport {
 		for (Folder folder2 : folderList) {
 			System.out.println(folder2);
 		}
-		int pageSize = 1;
+	
 		List<Message> li=Lists.newArrayList();
-		Folder fld_fulltxt=store.getFolder("fulltxt");
+		Folder fld_fulltxt=store.getFolder("fldFull2");
 		System.out.println(fld_fulltxt.getMessageCount());
-		String dir="D:\\0emlIndex\\3";
+	
 		File[] fa=new File(dir).listFiles();
 		for (File f : fa) {
+			cnt++;
+			System.out.println(cnt);
 			System.out.println(f);
 			Message m=eml2message(f);
 		

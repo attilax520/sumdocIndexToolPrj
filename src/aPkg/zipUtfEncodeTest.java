@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.lf5.util.StreamUtils;
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipFile;
 
@@ -14,6 +15,7 @@ import com.attilax.compress.ZipUtilV2t55;
 import com.attilax.coreLuni.util.ExUtil;
 import com.attilax.data.csv.htmlJsoupUtil;
 import com.attilax.io.FileEncodeUtil;
+import com.attilax.io.IOUtilsAti;
 import com.google.common.collect.Maps;
 
 import comattilax.sumdoclist.FileTraveList;
@@ -34,20 +36,22 @@ public class zipUtfEncodeTest {
 
 					InputStream InputStream1 = null;
 
-					InputStream1 = ZipFile1.getInputStream(ZipEntry1);  
-					String encode=FileEncodeUtil.getTxtEncode(ZipFile1.getInputStream(ZipEntry1));
-					String filecon = IOUtils.toString(InputStream1,encode);//def read is gbk
-			//	.getClass().	filecon = IOUtils.toString
+					InputStream1 = ZipFile1.getInputStream(ZipEntry1);
+					String filecon = IOUtilsAti.toStringAutoencode(InputStream1, ZipEntry1.getSize());// def
+																										// read
+																										// is
+																										// gbk
+
 					Map trace_m_cur = Maps.newLinkedHashMap();
 
 					// trace_m_cur.put("key", key);
-					trace_m_cur.put("ZipFile1", ZipFile1.toString());					
-					trace_m_cur.put("ZipEntry1", ZipEntry1);
+					trace_m_cur.put("ZipFile1", ZipFile1.toString());
+					trace_m_cur.put("ZipEntry1", ZipEntry1.getName());
 					trace_m_cur.put("ZipEntry1filecon", filecon);
-					trace_m_cur.put("encode", encode);
+
 					// trace_m_cur.put("hit line", li);
-				 
-					System.out.println(JSON.toJSONString(trace_m_cur, true));
+					logger.info(JSON.toJSONString(trace_m_cur, true));
+					// System.out.println(JSON.toJSONString(trace_m_cur, true));
 
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

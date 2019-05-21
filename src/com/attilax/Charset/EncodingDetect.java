@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import com.attilax.util.RuntimeExceptionAtiVer;
+
 /**
  * <Detect encoding .>
  *  Copyright (C) <2009>  <Fluck,ACC http://androidos.cc/dev>
@@ -26,7 +28,7 @@ import java.net.URL;
  * GNU General Public License for more details.
  * 
  * EncodingDetect.java<br>
- * 自动获取文件的编码
+ * 閼奉亜濮╅懢宄板絿閺傚洣娆㈤惃鍕椽閻拷
  * @author Billows.Van
  * @since Create on 2010-01-27 11:19:00   
  * @version 1.0 
@@ -40,15 +42,56 @@ public class EncodingDetect {
 	}
 	
 	/**
-	 * 得到文件的编码
-	 * @param filePath 文件路径
-	 * @return 文件的编码
+	 * 瀵版鍩岄弬鍥︽閻ㄥ嫮绱惍锟�
+	 * @param filePath 閺傚洣娆㈢捄顖氱窞
+	 * @return 閺傚洣娆㈤惃鍕椽閻拷
 	 */
+	public static String getJavaEncode(InputStream FileInputStream1,long length_file){
+		try {
+			byte[] rawtext;
+// 2,147,483,647    2g file size ,enouf
+			rawtext = new byte[(int) length_file];
+
+			FileInputStream1.read(rawtext);
+			FileInputStream1.close();
+		//	FileInputStream FileInputStream1;
+		//	int length_file = (int) testfile.length();
+		//	FileInputStream1 = new FileInputStream(testfile);
+			BytesEncodingDetect s = new BytesEncodingDetect(); 
+			int detectEncoding = s.detectEncoding(rawtext);
+			String fileCode = BytesEncodingDetect.javaname[detectEncoding];
+			return fileCode;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	
+	public static String getJavaEncode(byte[] rawtext){
+		try {
+ 
+		//	FileInputStream FileInputStream1;
+		//	int length_file = (int) testfile.length();
+		//	FileInputStream1 = new FileInputStream(testfile);
+			BytesEncodingDetect s = new BytesEncodingDetect(); 
+			int detectEncoding = s.detectEncoding(rawtext);
+			String fileCode = BytesEncodingDetect.javaname[detectEncoding];
+			return fileCode;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
 	public static String getJavaEncode(String filePath){
 		BytesEncodingDetect s = new BytesEncodingDetect(); 
-		String fileCode = BytesEncodingDetect.javaname[s.detectEncoding(new File(filePath))];
+		int detectEncoding = s.detectEncoding(new File(filePath));
+		String fileCode = BytesEncodingDetect.javaname[detectEncoding];
 		return fileCode;
 	}
+	
+	
 	@Deprecated
 	public static void readFile(String file, String code) {
 
@@ -61,13 +104,13 @@ public class EncodingDetect {
 			fr = new BufferedReader(read);
 			String line = null;
 			int flag=1;
-			// 读取每一行，如果结束了，line会为空
+			// 鐠囪褰囧В蹇庣鐞涘矉绱濇俊鍌涚亯缂佹挻娼禍鍡礉line娴兼矮璐熺粚锟�
 			while ((line = fr.readLine()) != null && line.trim().length() > 0) {
 				if(flag==1) {
-				    line=line.substring(1);//去掉文件头
+				    line=line.substring(1);//閸樼粯甯�閺傚洣娆㈡径锟�
 				    flag++;
 			    }
-				// 每一行创建一个Student对象，并存入数组中
+				// 濮ｅ繋绔寸悰灞藉灡瀵よ桨绔存稉鐚則udent鐎电钖勯敍灞借嫙鐎涙ê鍙嗛弫鎵矋娑擄拷
 				System.out.println(line);
 			}
 			fr.close();
@@ -171,19 +214,28 @@ class BytesEncodingDetect extends Encoding {
 	   * EUC_TW, ASCII, or OTHER) Description: This function looks at the file and assigns it a probability score for each encoding
 	   * type. The encoding type with the highest probability is returned.
 	   */
-	  public int detectEncoding(File testfile) {
-	    FileInputStream chinesefile;
-	    byte[] rawtext;
-	    rawtext = new byte[(int) testfile.length()];
-	    try {
-	      chinesefile = new FileInputStream(testfile);
-	      chinesefile.read(rawtext);
-	      chinesefile.close();
-	    } catch (Exception e) {
-	      System.err.println("Error: " + e);
-	    }
-	    return detectEncoding(rawtext);
-	  }
+	public int detectEncoding(File testfile) {
+		try {
+			FileInputStream FileInputStream1;
+			int length_file = (int) testfile.length();
+			FileInputStream1 = new FileInputStream(testfile);
+
+			return detectEncodingInt(FileInputStream1, length_file);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private int detectEncodingInt(FileInputStream FileInputStream1, int length_file) throws IOException {
+		byte[] rawtext;
+
+		rawtext = new byte[length_file];
+
+		FileInputStream1.read(rawtext);
+		FileInputStream1.close();
+
+		return detectEncoding(rawtext);
+	}
 
 	  /**
 	   * Function : detectEncoding Aruguments: byte array Returns : One of the encodings from the Encoding enumeration (GB2312, HZ,

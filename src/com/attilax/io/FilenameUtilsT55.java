@@ -1,6 +1,7 @@
 package com.attilax.io;
 
 import java.io.File;
+import java.nio.file.FileVisitResult;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -61,5 +62,20 @@ public class FilenameUtilsT55 {
 		  /*  694 */          return Math.max(lastUnixPos, lastWindowsPos);
 		  /*  695 */       }
 		  /*  696 */    }
+
+	public static boolean isImgFile(String ext) {
+		ext=ext.toLowerCase();
+		if("jpg.jpeg.gif.png".contains(ext))
+		return true;
+		else
+			return false;
+	}
+
+	public static boolean isImgFileByFullname(String Fullname) {
+		String ext = FilenameUtils.getExtension(Fullname);
+		if(FilenameUtilsT55.isImgFile(ext))
+			return true; // √ª’“µΩºÃ–¯’“
+		return false;
+	}
 
 }
