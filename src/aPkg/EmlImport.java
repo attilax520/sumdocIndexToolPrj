@@ -14,6 +14,7 @@ import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeMessage;
+import javax.mail.search.SearchTerm;
 
 import org.apache.commons.io.FileUtils;
 
@@ -66,6 +67,7 @@ public class EmlImport {
 				li.clear();
 			}
 		}
+	//	Folder.search(SearchTerm)
 		//fld_fulltxt.close();
 		store.close();
 	//	session.

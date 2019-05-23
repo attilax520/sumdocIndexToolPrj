@@ -29,7 +29,7 @@ import com.google.common.collect.Maps;
 
 /** */
 /**
- * 压缩/解压缩zip包处理类
+ * 鍘嬬缉/瑙ｅ帇缂﹝ip鍖呭鐞嗙被
  * 
  * @author yayagepei
  * @date 2008-8-25
@@ -40,14 +40,14 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 压缩
+	 * 鍘嬬缉
 	 * 
 	 * @param zipFileName
-	 *            压缩产生的zip包文件名--带路径,如果为null或空则默认按文件名生产压缩文件名
+	 *            鍘嬬缉浜х敓鐨剒ip鍖呮枃浠跺悕--甯﹁矾寰�,濡傛灉涓簄ull鎴栫┖鍒欓粯璁ゆ寜鏂囦欢鍚嶇敓浜у帇缂╂枃浠跺悕
 	 * @param relativePath
-	 *            相对路径，默认为空
+	 *            鐩稿璺緞锛岄粯璁や负绌�
 	 * @param directory
-	 *            文件或目录的绝对路径
+	 *            鏂囦欢鎴栫洰褰曠殑缁濆璺緞
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 * @author yayagepei
@@ -82,14 +82,14 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 压缩
+	 * 鍘嬬缉
 	 * 
 	 * @param zos
-	 *            压缩输出流
+	 *            鍘嬬缉杈撳嚭娴�
 	 * @param relativePath
-	 *            相对路径
+	 *            鐩稿璺緞
 	 * @param absolutPath
-	 *            文件或文件夹绝对路径
+	 *            鏂囦欢鎴栨枃浠跺す缁濆璺緞
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-8-26
@@ -115,14 +115,14 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 压缩文件
+	 * 鍘嬬缉鏂囦欢
 	 * 
 	 * @param zos
-	 *            压缩输出流
+	 *            鍘嬬缉杈撳嚭娴�
 	 * @param file
-	 *            文件对象
+	 *            鏂囦欢瀵硅薄
 	 * @param relativePath
-	 *            相对路径
+	 *            鐩稿璺緞
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-8-26
@@ -152,12 +152,12 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 创建目录
+	 * 鍒涘缓鐩綍
 	 * 
 	 * @param zos
-	 *            zip输出流
+	 *            zip杈撳嚭娴�
 	 * @param relativePath
-	 *            相对路径
+	 *            鐩稿璺緞
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-8-26
@@ -169,22 +169,22 @@ public class ZipUtilV2t55 {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String f = "C:\\00\\FlashFXP_4.3.1.1969_ati.zip";
-		String f2 = "C:\\00";
-		// unzip(f,f2);
-		f = "C:\\0wkspc\\移动医疗源码\\移动医护\\移动护士站\\honurse\\holib\\activemq\\activemq-all-5.11.1.jar";
-		System.out.println(unzip_filelist(f));
+//		String f = "C:\\00\\FlashFXP_4.3.1.1969_ati.zip";
+//		String f2 = "C:\\00";
+//		// unzip(f,f2);
+//		f = "C:\\0wkspc\\绉诲姩鍖荤枟婧愮爜\\绉诲姩鍖绘姢\\绉诲姩鎶ゅ＋绔橽\honurse\\holib\\activemq\\activemq-all-5.11.1.jar";
+//		System.out.println(unzip_filelist(f));
 	}
 
 	/** */
 	/**
-	 * 解压缩zip包
+	 * 瑙ｅ帇缂﹝ip鍖�
 	 * 
 	 * @param zipFilePath
-	 *            zip文件路径
+	 *            zip鏂囦欢璺緞
 	 * @param targetPath
-	 *            解压缩到的位置,linba ma
-	 *            fesyegeor，如果为null或空字符串则默认解压缩到跟zip包同目录跟zip包同名的文件夹下
+	 *            瑙ｅ帇缂╁埌鐨勪綅缃�,linba ma
+	 *            fesyegeor锛屽鏋滀负null鎴栫┖瀛楃涓插垯榛樿瑙ｅ帇缂╁埌璺焭ip鍖呭悓鐩綍璺焭ip鍖呭悓鍚嶇殑鏂囦欢澶逛笅
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-9-28
@@ -347,13 +347,13 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 解压缩zip包
+	 * 瑙ｅ帇缂﹝ip鍖�
 	 * 
 	 * @param zipFilePath
-	 *            zip文件路径
+	 *            zip鏂囦欢璺緞
 	 * @param targetPath
-	 *            解压缩到的位置,linba ma
-	 *            fesyegeor，如果为null或空字符串则默认解压缩到跟zip包同目录跟zip包同名的文件夹下
+	 *            瑙ｅ帇缂╁埌鐨勪綅缃�,linba ma
+	 *            fesyegeor锛屽鏋滀负null鎴栫┖瀛楃涓插垯榛樿瑙ｅ帇缂╁埌璺焭ip鍖呭悓鐩綍璺焭ip鍖呭悓鍚嶇殑鏂囦欢澶逛笅
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-9-28
@@ -392,13 +392,13 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 解压缩zip包
+	 * 瑙ｅ帇缂﹝ip鍖�
 	 * 
 	 * @param zipFilePath
-	 *            zip文件路径
+	 *            zip鏂囦欢璺緞
 	 * @param targetPath
-	 *            解压缩到的位置,linba ma
-	 *            fesyegeor，如果为null或空字符串则默认解压缩到跟zip包同目录跟zip包同名的文件夹下
+	 *            瑙ｅ帇缂╁埌鐨勪綅缃�,linba ma
+	 *            fesyegeor锛屽鏋滀负null鎴栫┖瀛楃涓插垯榛樿瑙ｅ帇缂╁埌璺焭ip鍖呭悓鐩綍璺焭ip鍖呭悓鍚嶇殑鏂囦欢澶逛笅
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-9-28
@@ -457,7 +457,7 @@ public class ZipUtilV2t55 {
 		// zipfile is file not dir
 		if (!zipEntry.isDirectory() && zipEntry.getSize() > 0) {
 			// FileUtil
-			// 文件
+			// 鏂囦欢
 			boolean isNotDirectory = false;
 			logger.info("upzip file:" + fileName);
 			File targetFile = FileUtils.buildFile(fileName, isNotDirectory);
@@ -465,7 +465,7 @@ public class ZipUtilV2t55 {
 		}
 		if (!zipEntry.isDirectory() && zipEntry.getSize() == 0) // empty file
 		{
-			// 空file
+			// 绌篺ile
 			logger.info("upzip file empty :" + fileName);
 			FileUtils.buildFile(fileName, true);
 		}
@@ -511,13 +511,13 @@ public class ZipUtilV2t55 {
 
 	/** */
 	/**
-	 * 解压缩zip包
+	 * 瑙ｅ帇缂﹝ip鍖�
 	 * 
 	 * @param zipFilePath
-	 *            zip文件路径
+	 *            zip鏂囦欢璺緞
 	 * @param targetPath
-	 *            解压缩到的位置,linba ma
-	 *            fesyegeor，如果为null或空字符串则默认解压缩到跟zip包同目录跟zip包同名的文件夹下
+	 *            瑙ｅ帇缂╁埌鐨勪綅缃�,linba ma
+	 *            fesyegeor锛屽鏋滀负null鎴栫┖瀛楃涓插垯榛樿瑙ｅ帇缂╁埌璺焭ip鍖呭悓鐩綍璺焭ip鍖呭悓鍚嶇殑鏂囦欢澶逛笅
 	 * @throws IOException
 	 * @author yayagepei
 	 * @date 2008-9-28
@@ -550,12 +550,12 @@ public class ZipUtilV2t55 {
 					}
 					if (zipEntry.getSize() > 0) {
 						// FileUtil
-						// 文件
+						// 鏂囦欢
 						File targetFile = FileUtils.buildFile(directoryPath + File.separator + zipEntry.getName(),
 								false);
 						upzipSingleOutput(zipFile, zipEntry, targetFile);
 					} else {
-						// 空目录
+						// 绌虹洰褰�
 						FileUtils.buildFile(directoryPath + File.separator + zipEntry.getName(), true);
 					}
 				}

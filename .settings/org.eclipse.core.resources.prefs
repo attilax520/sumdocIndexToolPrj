@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/aPkg/SearchZip.java=UTF-8
 encoding//src/com/attilax/Charset/EncodingDetect.java=UTF-8
+encoding//src/com/attilax/compress/ZipUtilV2t55.java=UTF-8
 encoding//src/com/attilax/io/FileUtilsAti.java=UTF-8
+encoding//src/com/attilax/text/HeziUtil.java=UTF-8

@@ -13,5 +13,7 @@
 	<classpathentry kind="lib" path="miniPrjjars/org.apache.tools.zip_1.9.6.jar"/>
 	<classpathentry kind="lib" path="miniPrjjars/jsoup-1.9.2.jar"/>
 	<classpathentry kind="lib" path="miniPrjjars/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="miniPrjjars/commons-net-3.6.jar"/>
+	<classpathentry kind="lib" path="miniPrjjars/mmseg4j-all-1.9.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
