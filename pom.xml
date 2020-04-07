@@ -1,118 +1,145 @@
- 
+
 
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.attilaxid</groupId>
-  <artifactId>sumdoclist</artifactId>
-  <packaging>war</packaging>
-    <version>1</version>
- <!--  pom2tomcat -->
- 
-  <name>hislicense Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <properties>  
-        
-    </properties>  
-    
-    <dependencies>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.attilaxid</groupId>
+	<artifactId>sumdoclist</artifactId>
+	<packaging>war</packaging>
+	<version>1</version>
+	<!-- pom2tomcat -->
 
+	<name>hislicense Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
 
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-</dependency>
+	</properties>
 
+	<dependencies>
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
- <groupId>javax.activation</groupId>
- <artifactId>activation</artifactId>
- <version>1.1</version>
-</dependency>
-<dependency>
- <groupId>javax.mail</groupId>
- <artifactId>mail</artifactId>
- <version>1.4</version>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.4</version>
 </dependency>
 
 
-</dependencies>
-    
-    <!--   builder   <finalName>hislogv3</finalName> -->
-    <!--    -->
-   <build>
-   
-      
-      
-       <!-- ************************************ out war dir and filename -->  
-      <!-- war filename -->
-   <finalName>webcon</finalName>
-   <!-- war position   webapps-->
-   <directory>C:\Program Files (x86)\Apache Software Foundation\Tomcat 8.0\s71</directory> 
-  
-   
-   
-    <!-- ************************************set not build by maven ,use elcipse build -->
-   <sourceDirectory>srcnone</sourceDirectory>    
-      <resources> 
-            <!-- 这个元素描述了项目相关或测试相关的所有资源路径 --> 
-            <resource> 
-   
-                <!-- 描述存放资源的目录，该路径相对POM路径 --> 
-                <directory>resnone</directory>
 
-               
-            </resource> 
-     </resources> 
-   
-   
-   <plugins>  
-   
-   
-    <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-javadoc-plugin</artifactId>
-    <version>3.0.0</version>
-  </plugin>
-        <!-- ************************************修改webapp目录为WebContent -->  
-        <plugin>  
-            <groupId>org.apache.maven.plugins</groupId>  
-            <artifactId>maven-war-plugin</artifactId>  
-            <configuration>  
-                <!-- 设置WebContent目录为Web目录 -->  
-                <webappDirectory>${basedir}/WebContent</webappDirectory>  
-                <warSourceDirectory>${basedir}/WebContent4</warSourceDirectory>  
-            </configuration>  
-        </plugin>  
-        
-        
-        
- 
+<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.7</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.10</version>
+</dependency>
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>19.0</version>
+</dependency>
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
 
 
-    </plugins>  
-    
-    
-    
-     <testSourceDirectory>src/none</testSourceDirectory>
-    <!-- 
-        <targetPath>target3</targetPath>  
-          <outputDirectory>bin</outputDirectory> 
-    
-     -->
-     
-   
-     
-    
- 
-  </build>
+	</dependencies>
 
-     <!--  builder end  -->
-     
-     
-     
-   
+	<!-- builder <finalName>hislogv3</finalName> -->
+	<!-- -->
+	<build>
+
+
+
+		<!-- ************************************ out war dir and filename -->
+		<!-- war filename -->
+		<finalName>webcon</finalName>
+		<!-- war position webapps -->
+		<directory>C:\Program Files (x86)\Apache Software Foundation\Tomcat 8.0\s71</directory>
+
+
+
+		<!-- ************************************set not build by maven ,use elcipse build -->
+		<sourceDirectory>srcnone</sourceDirectory>
+		<resources>
+			<!-- 这个元素描述了项目相关或测试相关的所有资源路径 -->
+			<resource>
+
+				<!-- 描述存放资源的目录，该路径相对POM路径 -->
+				<directory>resnone</directory>
+
+
+			</resource>
+		</resources>
+
+
+		<plugins>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<!-- ************************************修改webapp目录为WebContent -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- 设置WebContent目录为Web目录 -->
+					<webappDirectory>${basedir}/WebContent</webappDirectory>
+					<warSourceDirectory>${basedir}/WebContent4</warSourceDirectory>
+				</configuration>
+			</plugin>
+
+
+
+
+
+
+		</plugins>
+
+
+
+		<testSourceDirectory>src/none</testSourceDirectory>
+		<!-- <targetPath>target3</targetPath> <outputDirectory>bin</outputDirectory> -->
+
+
+
+
+
+	</build>
+
+	<!-- builder end -->
+
+
+
+
 </project>
  
   
