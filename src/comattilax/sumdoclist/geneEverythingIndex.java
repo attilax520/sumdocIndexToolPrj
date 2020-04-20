@@ -21,7 +21,7 @@ import org.apache.log4j.NDC;
 import com.alibaba.fastjson.JSON;
 import com.attilax.io.filex;
 import com.google.common.collect.Maps;
-
+//code gbk
 public class geneEverythingIndex {
 	static org.apache.log4j.Logger logger = Logger.getLogger(FileTraveList.class);
 	//static static walkFileTreeLogger
@@ -74,10 +74,10 @@ public class geneEverythingIndex {
 							String fileSingle=line.trim();
 							
 							try {
-								Map m=Maps.newLinkedHashMap();
-								m.put("dirlistFilename",file.toFile().getAbsolutePath());
-								m.put("linenum",linenum);
-								m.put("linenumSource",line);
+								Map m_intofile_data=Maps.newLinkedHashMap();
+								m_intofile_data.put("dirlistFilename",file.toFile().getAbsolutePath());
+								m_intofile_data.put("linenum",linenum);
+								m_intofile_data.put("linenumSource",line);
 								
 								String basename=FilenameUtils.getBaseName(fileSingle); 
 								basename=filenameEncode(basename);
@@ -85,7 +85,7 @@ public class geneEverythingIndex {
 								logger.info(everythingIndexFilename);
 								File file2 = new File(everythingIndexFilename); 
 								//should be all json struts..
-								FileUtils.writeStringToFile(file2, "\r\n"+JSON.toJSONString(m, true), true);
+								FileUtils.writeStringToFile(file2, "\r\n"+JSON.toJSONString(m_intofile_data, true), true);
 							} catch (Exception e) {
 								logger.error(e);
 							}

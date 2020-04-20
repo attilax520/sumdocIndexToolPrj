@@ -25,6 +25,11 @@ import com.attilax.io.filex;
 import com.attilax.util.CantFindEx;
 import com.google.common.collect.Maps;
 
+/**
+ * chonf wenj kwahaor..file brack 重复文件括号
+ * @author Administrator
+ *
+ */
 public class clrDeliNameFile {
 	static org.apache.log4j.Logger logger = Logger.getLogger(FileTraveList.class);
 	//static static walkFileTreeLogger
@@ -33,17 +38,17 @@ public class clrDeliNameFile {
 	//	t1("D:\\l3 sumdoc s2018 torb31 v2 t1_filelist.txt");
 	//	trave_dir("C:\\Users\\Administrator\\Documents\\law res 法学资源库","d:\\law res 法学资源库clrdeduli");
 		
-	 trave_dir("C:\\Users\\Administrator\\Documents\\test","d:\\law res 法学资源库clrdeduli4");
+	 trave_dir("D:\\BaiduNetdiskDownload","d:\\BaiduNetdiskDownload_clrdeduli4");
 	//	trave_dir("C:\\Users\\Administrator\\Documents\\law res 法学资源库","d:\\law res 法学资源库clrdeduli3");
  
-		System.out.println("--");
+		System.out.println("---");
 	}
 
 	private static void trave_dir(String dir_source, String dirout) throws Exception {
 		// 处理下级多层目录
 				Files.walkFileTree(Paths.get(dir_source), new SimpleFileVisitor<Path>() {
 
-					@Override // 处理目录
+					@Override // 处理目录  dir 
 					public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
 						System.out.println(dir);
 						return FileVisitResult.CONTINUE;
